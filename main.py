@@ -18,6 +18,7 @@ def generate():
     if checkbox2.get():
         prompt += "The project should include a API. "
 
+    # openai.api_key = "YOUR_OPENAI_API_KEY" # Add your api key
     openai.api_key = os.getenv(key="OPENAI_API_KEY")  # Add key to your system environment variable
     response = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": prompt}])
 
